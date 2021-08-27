@@ -1,25 +1,26 @@
 pipeline {
-		stages {
-			stage('Build') {
-				steps {
-					//sh 'mvn --version'
-					echo "Build"
-					echo "$PATH"
-					echo "BUILD_NUMBER - $env.BUILD_NUMBER"
-					echo "JOB NAME- $env.JOB_NAME"
-				}
+	stages {
+		stage('Build') {
+			steps {
+				//sh 'mvn --version'
+				echo "Build"
+				echo "$PATH"
+				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
+				echo "JOB NAME- $env.JOB_NAME"
 			}
-			stage('Tests') {
-				steps {
-					echo "Tests"
-				}
-			}
-			stage('Integration Tests') {
-				steps {
-					echo "Integration Tests"
-				}
-			}	
 		}
+		stage('Tests') {
+			steps {
+				echo "Tests"
+			}
+		}
+		stage('Integration Tests') {
+			steps {
+				echo "Integration Tests"
+			}
+		}	
+				
+	}
 		post{
 			always {
 				echo "I run always"
